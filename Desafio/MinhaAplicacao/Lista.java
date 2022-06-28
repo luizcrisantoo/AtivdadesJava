@@ -4,6 +4,10 @@ import java.util.*;
 
 public class Lista {
 
+    private Node primeiro;
+    private int qtd;
+    private Node ultimo;
+
     public boolean isEmpty() { // está vazia?
         if (this.primeiro == null && this.qtd == 0 && this.ultimo == null) {
             return true;
@@ -32,9 +36,9 @@ public class Lista {
             email = in.nextLine();
             med.setEmail(email);
             System.out.print("Informe o telefone do médico: ");
-            telefone = in.nextInt();
+            telefone = in.nextLine();
             in.nextLine();
-            med.setFaltas(telefone);
+            med.setTelefone(telefone);
             System.out.println("Alterações efetuadas!");
         }
     }
@@ -66,7 +70,7 @@ public class Lista {
             this.qtd++;
             System.out.println("Cadastro realizado com sucesso!");
         } else {
-            aux = this.buscar(med.getCrm());
+            aux = this.buscar(med.getcrm());
             if (aux == null) {
                 this.ultimo.setProx(novo);
                 this.ultimo = novo;

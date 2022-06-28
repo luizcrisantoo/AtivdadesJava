@@ -1,3 +1,5 @@
+package Desafio.MinhaAplicacao;
+
 public class Medico {
     Long id;
     String nome;

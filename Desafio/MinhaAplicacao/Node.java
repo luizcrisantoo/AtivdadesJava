@@ -3,6 +3,7 @@ package Desafio.MinhaAplicacao;
 public class Node {
     private Medico info;
     private Node prox;
+    private String crm;
 
     public Node(Medico med) { // construtor
         this.info = med;

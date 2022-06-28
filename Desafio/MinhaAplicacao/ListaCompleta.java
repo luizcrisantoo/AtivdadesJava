@@ -2,13 +2,14 @@ package Desafio.MinhaAplicacao;
 
 import java.util.Scanner;
 
-public class Main {
+public class ListaCompleta extends Lista {
+
     public static void main(String[] args) {
-        Main = new Lista();
+        Lista ListaCompleta = new Lista();
         Scanner in = new Scanner(System.in);
         char op;
         Medico medico;
-        String nome, crm, email, telefone;
+        String nome, crm, email, telefone, id;
         do {
             exibirMenu();
             op = in.next().charAt(0);
@@ -18,16 +19,16 @@ public class Main {
                     System.out.print("Qual é o Crm do médico? ");
                     crm = in.nextLine();
                     medico = new Medico(crm);
-                    Main.inserirFinal(medico);
+                    ListaCompleta.inserirFinal(medico);
                     break;
                 case '2':
-                    Main.alterarInfo();
+                    ListaCompleta.alterarInfo();
                     break;
                 case '3':
-                    Main.exibirLista();
+                    ListaCompleta.exibirLista();
                     break;
                 case '4':
-                    Main.remover();
+                    ListaCompleta.remover(crm);
                     break;
                 case '0':
                     System.out.println("Até mais!");
@@ -44,7 +45,6 @@ public class Main {
         System.out.println("2 - Alterar dados ");
         System.out.println("3 - Exibir médicos");
         System.out.println("4 - Deletar médico da lista");
-        System.out.println("5 - Exibir médicos");
         System.out.println("0 - Sair do programa");
         System.out.print("Informe a opção desejada: ");
     }
